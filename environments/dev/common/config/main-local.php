@@ -6,7 +6,7 @@ return [
             'dsn' => 'mysql:host=localhost;dbname=yii2',
             'username' => 'root',
             'password' => 'root',
-            'charset' => 'utf8',
+            'charset' => 'utf8'
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -14,11 +14,20 @@ return [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
-        'urlManager'=>[
-            'class'=>'yii\web\UrlManager',
-            'enablePrettyUrl' => true,
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.163.com',
+                'username' => 'jonas_lab@163.com',
+                'password' => 'Z923113762',
+                'port'=>'465',
+                'encryption' => 'tls',
+            ],
         ]
-    ],
+        ,
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true
+        ]
+    ]
 ];

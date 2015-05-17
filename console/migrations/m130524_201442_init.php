@@ -1,12 +1,12 @@
 <?php
-
-use yii\db\Schema;
-use yii\db\Migration;
 /**
  * Create user table
  * @author jonas  jonas_php@163.com
  *
  */
+use yii\db\Schema;
+use yii\db\Migration;
+
 class m130524_201442_init extends Migration
 {
     const TBL_NAME="{{%user}}";
