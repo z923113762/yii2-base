@@ -18,10 +18,10 @@ return [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.163.com',
-                'username' => 'jonas_lab@163.com',
-                'password' => 'Z923113762',
+                'username' => 'php_test1@163.com',
+                'password' => 'cctvezdjkxubejiq',
                 'port'=>'465',
-                'encryption' => 'tls',
+                'encryption' => 'ssl',
             ],
         ]
         ,

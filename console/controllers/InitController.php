@@ -45,14 +45,14 @@ class InitController extends \yii\console\Controller
     public function actionMail()
     {
         $mail = Yii::$app->mailer->compose();
-        $mail->setFrom('jonas_lab@163.com');
+        $mail->setFrom('php_test1@163.com');
         $mail->setTo('924454486@qq.com');
-        $mail->setSubject('test');
-        $mail->setTextBody('test222');
-        $mail->setHtmlBody('test333');
+        $mail->setSubject('this is a yii test email');
+//         $mail->setTextBody('nice');
+        $mail->setHtmlBody('good');
         if ($mail->send())
             echo "success";
         else
-            echo "failse";
+            echo "failed";
     }
 }
