@@ -10,6 +10,10 @@ use yii\db\Migration;
 class m130524_201442_init extends Migration
 {
     const TBL_NAME="{{%user}}";
+    /**
+     * Create "user" table and index 
+     * @see \yii\db\Migration::safeUp()
+     */
     public function safeUp()
     {
         $tableOptions = null;
@@ -17,7 +21,8 @@ class m130524_201442_init extends Migration
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB AUTO_INCREMENT = 100';
         }
-//         $this->dropTable(self::TBL_NAME);
+        //dorp table
+        $this->dropTable(self::TBL_NAME);
         
         $this->createTable(self::TBL_NAME, [
             'id' => Schema::TYPE_PK,
@@ -30,10 +35,14 @@ class m130524_201442_init extends Migration
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
+        //create index
         $this->createIndex('username', self::TBL_NAME, ['username'],true);
         $this->createIndex('email', self::TBL_NAME, ['email'],true);
     }
-
+    /**
+     * removing "user" table
+     * @see \yii\db\Migration::safeDown()
+     */
     public function safeDown()
     {
         $this->dropTable(self::TBL_NAME);

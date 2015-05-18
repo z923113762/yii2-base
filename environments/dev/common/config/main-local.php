@@ -21,7 +21,7 @@ return [
                 'username' => 'php_test1@163.com',
                 'password' => 'cctvezdjkxubejiq',
                 'port'=>'465',
-                'encryption' => 'ssl',
+                'encryption' => 'ssl',shi
             ],
         ]
         ,
